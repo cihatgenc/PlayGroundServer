@@ -1,0 +1,30 @@
+# Boxstarter options
+$Boxstarter.RebootOk=$true # Allow reboots?
+$Boxstarter.NoPassword=$false # Is this a machine with no login password?
+$Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a reboot
+
+Set-BoxstarterConfig -NugetSources "https://chocolatey.org/api/v2"
+
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableExpandToOpenFolder
+Enable-RemoteDesktop
+# Disable-UAC
+Install-WindowsUpdate -AcceptEula
+if (Test-PendingReboot) { Invoke-Reboot }
+cinst boxstarter -y
+cinst chocolatey -y
+cinst chocolateygui -y
+cinst googlechrome -y
+cinst firefox -y
+cinst notepadplusplus -y
+cinst 7zip -y
+cinst sublimetext3 -y
+cinst vlc -y
+cinst sabnzbd -y
+cinst sickbeard -y
+cinst couchpotato -y
+cinst totalcommander -y
+cinst utorrent -y
+cinst TelnetClient -source windowsFeatures
+# Back to original repo
+Set-BoxstarterConfig -NugetSources "https://chocolatey.org/api/v2"
+if (Test-PendingReboot) { Invoke-Reboot }
