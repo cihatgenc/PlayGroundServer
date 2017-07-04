@@ -17,13 +17,15 @@ cinst googlechrome -y
 cinst firefox -y
 cinst notepadplusplus -y
 cinst 7zip -y
-cinst sublimetext3 -y
+#cinst sublimetext3 -y
 cinst vlc -y
 cinst sabnzbd -y
 cinst sickbeard -y
-cinst couchpotato -y
-cinst totalcommander -y
-cinst utorrent -y
+#cinst couchpotato -y
+#cinst totalcommander -y
+#cinst utorrent -y
+cinst avirafreeantivirus -y
+cinst quickpar -y
 cinst TelnetClient -source windowsFeatures
 # Back to original repo
 Set-BoxstarterConfig -NugetSources "https://chocolatey.org/api/v2"
